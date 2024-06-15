@@ -16,6 +16,7 @@
 </head>
 
 <body>
+    <script src="/assets/js/fetch3.js"></script>
     <header>
         <a href="index.html" class="logo">FuelUP</a>
         <nav class="navbar">
@@ -34,10 +35,10 @@
     <div class="hero">
         <div class="hero-info">
             <h1>Fuel up with FuelUP</h1>
-            <form>
-                <input class="search" type="search" placeholder="Search Locations, Fuel Stations, etc"
-                    aria-label="Search">
+            <form action="result.html" method="get">
+                <input class="search" name="query" type="search" placeholder="Search Locations, Fuel Stations, etc" aria-label="Search" oninput="showSuggestions(this.value)">
                 <i><button class="btn" type="submit">Search</button></i>
+                <div class="suggestions"></div>
             </form>
         </div>
     </div>
@@ -87,57 +88,7 @@
     <div class="featured_listing">
         <h1>Available Gas Stations</h1>
         <div class="card">
-            <div class="featured_listing_card">
-                <div class="featured_listing_card_info">
-                    <img src="assets/image/pertamina.jpg">
-                	<div class="property_title">
-                		<a href="product.html">Pertamina Tanjung Duren</a>
-                	</div>
-                    <p>Gasoline, Diesel, Electric Charging</p>
-                    <hr>
-                    <p>Area: 1500 sq ft</p>
-                    <hr>
-                    <p>Convenience Store, Restrooms, Air Pump</p>
-                    <hr>
-                    <p>Fire Extinguishers, CCTV, Emergency Shut-off</p>
-                    <hr>
-                    <p>Manager: John Doe, Added: 19/03/2021</p>
-                </div>
-            </div>
-            <div class="featured_listing_card">
-                <div class="featured_listing_card_info">
-                    <img src="assets/image/pertamina.jpg">
-                	<div class="property_title">
-                		<a href="product.html">Pertamina Tanjung Duren</a>
-                	</div>
-                    <p>Gasoline, Diesel, Electric Charging</p>
-                    <hr>
-                    <p>Area: 1500 sq ft</p>
-                    <hr>
-                    <p>Convenience Store, Restrooms, Air Pump</p>
-                    <hr>
-                    <p>Fire Extinguishers, CCTV, Emergency Shut-off</p>
-                    <hr>
-                    <p>Manager: John Doe, Added: 19/03/2021</p>
-                </div>
-            </div>
-            <div class="featured_listing_card">
-                <div class="featured_listing_card_info">
-                    <img src="assets/image/pertamina.jpg">
-                	<div class="property_title">
-                		<a href="product.html">Pertamina Tanjung Duren</a>
-                	</div>
-                    <p>Gasoline, Diesel, Electric Charging</p>
-                    <hr>
-                    <p>Area: 1500 sq ft</p>
-                    <hr>
-                    <p>Convenience Store, Restrooms, Air Pump</p>
-                    <hr>
-                    <p>Fire Extinguishers, CCTV, Emergency Shut-off</p>
-                    <hr>
-                    <p>Manager: John Doe, Added: 19/03/2021</p>
-                </div>
-            </div>
+            
         </div>
         <div class="featured_btn ">
             <a href="buy.html" class="btn">View All</a>
@@ -167,57 +118,7 @@
     <div class="featured_listing">
         <h1>Nearby Gas Stations</h1>
         <div class="card">
-            <div class="featured_listing_card">
-                <div class="featured_listing_card_info">
-                    <img src="assets/image/pertamina.jpg">
-                	<div class="property_title">
-                		<a href="product.html">Pertamina Tanjung Duren</a>
-                	</div>
-                    <p>Gasoline, Diesel, Electric Charging</p>
-                    <hr>
-                    <p>Area: 1500 sq ft</p>
-                    <hr>
-                    <p>Convenience Store, Restrooms, Air Pump</p>
-                    <hr>
-                    <p>Fire Extinguishers, CCTV, Emergency Shut-off</p>
-                    <hr>
-                    <p>Manager: John Doe, Added: 19/03/2021</p>
-                </div>
-            </div>
-            <div class="featured_listing_card">
-                <div class="featured_listing_card_info">
-                    <img src="assets/image/pertamina.jpg">
-                	<div class="property_title">
-                		<a href="product.html">Pertamina Tanjung Duren</a>
-                	</div>
-                    <p>Gasoline, Diesel, Electric Charging</p>
-                    <hr>
-                    <p>Area: 1500 sq ft</p>
-                    <hr>
-                    <p>Convenience Store, Restrooms, Air Pump</p>
-                    <hr>
-                    <p>Fire Extinguishers, CCTV, Emergency Shut-off</p>
-                    <hr>
-                    <p>Manager: John Doe, Added: 19/03/2021</p>
-                </div>
-            </div>
-            <div class="featured_listing_card">
-                <div class="featured_listing_card_info">
-                    <img src="assets/image/pertamina.jpg">
-                	<div class="property_title">
-                		<a href="product.html">Pertamina Tanjung Duren</a>
-                	</div>
-                    <p>Gasoline, Diesel, Electric Charging</p>
-                    <hr>
-                    <p>Area: 1500 sq ft</p>
-                    <hr>
-                    <p>Convenience Store, Restrooms, Air Pump</p>
-                    <hr>
-                    <p>Fire Extinguishers, CCTV, Emergency Shut-off</p>
-                    <hr>
-                    <p>Manager: John Doe, Added: 19/03/2021</p>
-                </div>
-            </div>
+            
         </div>
         <div class="featured_btn ">
             <a href="nearby.html" class="btn">View All</a>
