@@ -11,11 +11,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/image/favicon-32x32.png">
     <script src="script.js" defer></script>
+    <script type="module" src="assets/js/contact.js" defer></script>
     <title>FuelUP</title>
 </head>
 
 <body>
     <header>
+        <script src="assets/js/contact.js"></script>
         <a href="index.html" class="logo">FuelUP</a>
         <nav class="navbar">
             <a href="index.html">Home</a>
@@ -46,12 +48,14 @@
                     <p>Jalan Kanan Kiri No. 77</p>
                 </div>
                 <div>
-                    <img src="assets/image/mail_icon.png">
-                    <p>admin@fuelup.com</p>
+                    <a href="mailto:admin@fuelup.com" target="_blank">
+                        <img src="assets/image/mail_icon.png">
+                        <p>admin@fuelup.com</p>
+                    </a>
                 </div>
                 <div>
-                    <img src="assets/image/phone_icon.png">
-                    <p>(+62) 812-3456-7890</p>               
+                    <img src="assets/image/phone_icon.png" alt="Phone Icon">
+                    <p>(+62) 812-3456-7890</p>       
                 </div>
                 <div>
                     <img src="assets/image/time_icon.png">
@@ -65,12 +69,12 @@
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.4685425913876!2d106.77967977453092!3d-6.201753160752389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f6dcc7d2c4ad%3A0x209cb1eef39be168!2sBINUS%20University%2C%20Kampus%20BINUS%20Anggrek!5e0!3m2!1sen!2sid!4v1717507885048!5m2!1sen!2sid" width="100%" height="550" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <div class="contact_form">
-            <form>
+            <form id="contactForm">
                 <h1>Send a Message</h1>
-                <input type="text" name="name" placeholder="Name">
-                <input type="email" name="email" placeholder="Email"></br>
-                <textarea placeholder="Message"></textarea>
-                <a href="" class="btn" type="submit">Submit</a>
+                <input type="text" name="name" id="name" placeholder="Name" required>
+                <input type="email" name="email" id="email" placeholder="Email" required><br>
+                <textarea name="message" id="message" placeholder="Message" required></textarea>
+                <input type="submit" class="btn" value="Send">
             </form>
         </div>
     </div>
