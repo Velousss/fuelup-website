@@ -128,12 +128,22 @@ header .icons #menu-bars {
 
 .hero .hero-info form {
     display: flex;
+    align-items: center;
+    position: relative;
+
+}
+
+/* bagian yang gw ganti buat suggestion */
+
+.suggestions.show {
+    display: block; 
 }
 
 .hero .hero-info form .search {
     padding: 1rem 2rem;
     border-radius: 3rem;
     width: 80%;
+    flex-grow: 1;
 }
 
 .hero .hero-info form .btn {
@@ -144,6 +154,8 @@ header .icons #menu-bars {
     cursor: pointer;
     box-shadow: inset 0 0 0 0 black;
     transition: ease-out 0.5s;
+    margin-left: 10px; 
+    flex-shrink: 0;
 }
 
 .hero .hero-info form .btn:hover {
@@ -151,7 +163,30 @@ header .icons #menu-bars {
     color: white;
 }
 
+.hero .hero-info form .suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none;
+}
 
+.hero .hero-info form .suggestions div {
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.hero .hero-info form .suggestions div:hover {
+    background-color: #f0f0f0;
+}
+
+/* abis */
 
 /*----------------------------------stats-------------------------------------*/
 
@@ -1155,14 +1190,61 @@ header .icons #menu-bars {
 .buy_banner form {
     margin-top: 1rem;
     display: flex;
+    position: relative;
 }
 
 .buy_banner form .search {
     padding: 1rem 2rem;
     border-radius: 3rem;
     width: 80%;
+    flex-grow: 1;
 }
 
+.buy_banner form .btn {
+    padding: 1rem 2rem;
+    border-radius: 3rem;
+    color: white;
+    background-color: royalblue;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 black;
+    transition: ease-out 0.5s;
+    margin-left: 10px; 
+    flex-shrink: 0;
+}
+
+.buy_banner form .btn:hover {
+    box-shadow: inset 30rem 0 0 0 black;
+    color: white;
+}
+
+/* bagian suggestion juga tp buat buy_banner */
+
+.buy_banner form .suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none;
+    color: black;
+}
+
+.buy_banner form .suggestions div {
+    padding: 1rem;
+    cursor: pointer;
+    color: black
+}
+
+.buy_banner form .suggestions div:hover {
+    background-color: #f0f0f0;
+}
+
+/* abis */
 
 /*************************************Sell Page starts here********************************/
 .sell_wraper .sell_info{
@@ -1313,19 +1395,16 @@ header .icons #menu-bars {
     color: white;
 }
 
+/* add-ons buat results */
+.custom-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Distribute items evenly */
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.custom-card {
+    display: inline-block;
+            width: calc(33.33% - 20px);
+            margin: 10px;
+            vertical-align: top;
+}

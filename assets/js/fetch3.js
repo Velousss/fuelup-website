@@ -16,7 +16,7 @@ fetch('/assets/json/data.json')
             <div class="featured_listing_card_info">
               <img src="${location.image}" alt="${location.name}">
               <div class="property_title">
-                <a href="product.html">${location.name}</a>
+                <a>${location.name}</a>
               </div>
               <p>${location.types}</p>
               <hr>

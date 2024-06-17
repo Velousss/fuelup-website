@@ -6,18 +6,19 @@ menu.onclick = () => {
 }
 
 const locations = [
-  "Pertamina Location 1",
-  "Pertamina Location 2",
-  "Pertamina Location 3",
-  "Pertamina Location 4",
-  "Pertamina Location 5",
-  "Pertamina Location 6",
-  "Pertamina Location 7",
-  "Pertamina Location 8",
-  "Pertamina Location 9",
-  "Pertamina Location 10"
+    "Pertamina Location 1",
+    "Pertamina Location 2",
+    "Pertamina Location 3",
+    "Pertamina Location 4",
+    "Pertamina Location 5",
+    "Pertamina Location 6",
+    "Pertamina Location 7",
+    "Pertamina Location 8",
+    "Pertamina Location 9",
+    "Pertamina Location 10"
 ];
 
+// suggestion box
 function showSuggestions(value) {
   const suggestions = document.querySelector('.suggestions');
   suggestions.innerHTML = '';
@@ -31,13 +32,13 @@ function showSuggestions(value) {
         return response.json();
       })
       .then(results => {
-        const filteredResults = results.filter(result => result.title.toLowerCase().includes(value.toLowerCase()));
+        const filteredResults = results.filter(result => result.name && result.name.toLowerCase().includes(value.toLowerCase()));
 
         filteredResults.forEach(result => {
           const div = document.createElement('div');
-          div.textContent = result.title;
+          div.textContent = result.name;
           div.onclick = () => {
-            document.querySelector('.search').value = result.title;
+            document.querySelector('.search').value = result.name;
             suggestions.innerHTML = '';
             suggestions.style.display = 'none'; 
           };
@@ -71,9 +72,10 @@ document.addEventListener("DOMContentLoaded", function () {
           .then(results => {
               const resultContainer = document.querySelector('.featured_listing');
 
+              console.log(results.name)
               resultContainer.innerHTML = '';
 
-              const matchingResults = results.filter(result => result.title.toLowerCase().includes(query.toLowerCase()));
+              const matchingResults = results.filter(result => result.name && result.name.toLowerCase().includes(query.toLowerCase()));
 
               if (!query.trim()) {
                   resultContainer.innerHTML = `
@@ -90,27 +92,30 @@ document.addEventListener("DOMContentLoaded", function () {
                       <h1>Search Result</h1>
                       <div class="row custom-row"></div>
                   `;
-
+                  let rowDiv = document.querySelector('.custom-row');
                   matchingResults.forEach(matchingResult => {
-                      const markup = `
-                        <div class="featured_listing_card">
-                          <div class="featured_listing_card_info">
-                            <img src="${matchingResult.image}" alt="${matchingResult.name}">
-                            <div class="property_title">
-                              <a href="product.html">${matchingResult.name}</a>
-                            </div>
-                            <p>${matchingResult.types}</p>
-                            <hr>
-                            <p>${matchingResult.area}</p>
-                            <hr>
-                            <p>${matchingResult.facilities}</p>
-                            <hr>
-                            <p>${matchingResult.others}</p>
-                            <hr>
-                            <p>${matchingResult.date}</p>
+                      const cardDiv = document.createElement('div');
+                      cardDiv.classList.add('card', 'custom-card');
+                      cardDiv.innerHTML = `
+                          <div class="featured_listing_card">
+                              <div class="featured_listing_card_info">
+                                  <img src="${matchingResult.image}">
+                                  <div class="property_title">
+                                      <a>${matchingResult.name}</a>
+                                  </div>
+                                  <p>${matchingResult.types}</p>
+                                  <hr>
+                                  <p>${matchingResult.area}</p>
+                                  <hr>
+                                  <p>${matchingResult.facilities}</p>
+                                  <hr>
+                                  <p>${matchingResult.others}</p>
+                                  <hr>
+                                  <p>${matchingResult.date}</p>
+                              </div>
                           </div>
-                        </div>`;
-                        document.querySelector('.card').insertAdjacentHTML('beforeend', markup);
+                      `;
+                      rowDiv.appendChild(cardDiv);
                   });
               }
           })
@@ -122,6 +127,5 @@ document.addEventListener("DOMContentLoaded", function () {
                   <p>Sorry, there was an error fetching the results. Please try again later.</p>
               `;
           });
-    }
+  }
 });
-
